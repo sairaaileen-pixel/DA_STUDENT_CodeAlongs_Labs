@@ -1,0 +1,101 @@
+{
+  "readingId": "meet-your-terminal-reading",
+  "title": "Meet Your Terminal",
+  "timestamp": "2026-10-01T01:26:24.362Z",
+  "persona": {
+    "name": "Steady Turtle",
+    "emoji": "🐢"
+  },
+  "responses": {
+    "videoreflect": "When learning that adding extras to the commands like ls -a.",
+    "strategy": "Check for typos.",
+    "clue": "pwd and ls only print and cd actually changes the directory."
+  },
+  "score": {
+    "earned": 14.5,
+    "possible": 16,
+    "pct": 90.6
+  },
+  "scoreDetail": {
+    "q-firstcmd": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-checktools": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-errread": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-selectall": {
+      "earned": 0.5,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-interview": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-debug": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "q-summary": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    },
+    "act-flip-vocab": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "activity"
+    },
+    "act-terminal": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "activity"
+    },
+    "act-drag-commands": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "activity"
+    },
+    "act-order-orient": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "activity"
+    },
+    "act-video": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "video"
+    },
+    "resp-videoreflect": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "response"
+    },
+    "resp-strategy": {
+      "earned": 0,
+      "possible": 1,
+      "kind": "response"
+    },
+    "resp-clue": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "response"
+    },
+    "q-blank": {
+      "earned": 1,
+      "possible": 1,
+      "kind": "quiz"
+    }
+  }
+}
