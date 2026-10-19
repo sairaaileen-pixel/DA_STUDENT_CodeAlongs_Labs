@@ -47,5 +47,6 @@ $ rm -rf old_data/
 
 ```bash
 # TODO: count the file's rows
-# TODO: look at the actual header row
+# wc -l 
+# TODO: look at the actual header row 
 ```

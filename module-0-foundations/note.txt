@@ -1,4 +1,12 @@
 Great class today, the git demo finally clicked for me! 
+<<<<<<< HEAD
 This is a new line.
 
 This is another new line.
+=======
+This is a new line. 
+
+This is another new line.
+ This is another new line. 
+This is another new line. 
+>>>>>>> upstream/main

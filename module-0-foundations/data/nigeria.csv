@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+country,year,iso_code,population,energy_per_capita,fossil_share_energy,renewables_share_energy
+>>>>>>> upstream/main
 Nigeria,2015,NGA,190671883,2458.865,,
 Nigeria,2016,NGA,195443698,2431.617,,
 Nigeria,2017,NGA,200254580,2297.201,,

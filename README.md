@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 # Data Analytics Code-Alongs & Labs
 Hi Hello Hola 
 This is your working repo for code-alongs (from lecture) and labs
 (in-class practice) — starter files you actually type into, not a reference
 you just read.
+=======
+# Data Analytics Code-Alongs & Data Challenges
+
+This is your working repo for **code-alongs** (the code you type with your
+instructor during each LiveLab) and **Data Challenges** (the hands-on
+practice block after it). These are starter files you actually type into,
+not a reference you just read.
+>>>>>>> upstream/main
 
 ## Getting Set Up
 
@@ -50,46 +59,66 @@ new files/structure from upstream.
 
 ## Repo structure
 
+Each `module-*-.../` folder is one module. **A module only shows up here
+once it's ready**, so don't expect the whole program on day one.
+
+Module 1 onward:
+
 ```
-<module-slug>/
-  data/
-    <dataset files used across this module's lectures and labs>
-  lectures/
-    <lecture-slug>/
-      TERMINAL_WORKSHEET_STUDENT.md      # terminal/bash-based lecture
-      ...STUDENT.ipynb                    # Python-based lecture (Jupyter notebook)
-  labs/
-    <lab-slug>/
-      TERMINAL_WORKSHEET_STUDENT.md      # (or a notebook, same pattern as lectures)
+module-1-python-foundations/
+  livelabs/
+    <livelab-slug>/
+      Module1_LessonN_<slug>_STUDENT.py   # THE CODE-ALONG: type into this during class
+      <slug>.pdf                          # the day's slides
+  data-challenges/
+    data/                                 # the data files the challenges read
+    <challenge-slug>/
+      DataChallengeOverview&Steps.md      # START HERE: scenario, steps, hints, AI tips
+      <slug>_STUDENT.py                   # the file you complete and submit
+      RUBRIC.md                           # what you're graded on
 ```
 
-Each `module-*-.../` folder is one module (e.g. `module-0-foundations`).
-Inside it, `lectures/` holds one folder per class day, `labs/` holds one
-folder per hands-on practice session, and `data/` holds the dataset(s) that
-module's lectures/labs actually use.
+Module 0 uses older folder names (`lectures/` for the code-alongs and
+`labs/` for practice) and Markdown terminal worksheets instead of `.py`
+files. Everything below about running files applies from Module 1 on.
 
-**A module only shows up here once its content is ready** — new modules get
-added over the course of the program, so don't expect the whole curriculum
-on day one.
+## Running a `.py` file
 
-## The `data/` folder — read this before running any command
+Open a terminal in the folder that holds the file and run:
 
-Every worksheet/notebook references a dataset with a short path like
-`data/energy_sample.csv` — **that path is relative to the module's own root
-folder** (e.g. `module-0-foundations/`), **not** to the worksheet file's own
-location inside `lectures/<slug>/` or `labs/<lab-slug>/`.
+```
+python3 Module1_Lesson1_control-flow-conditionals_STUDENT.py
+```
 
-Before running a command that touches a dataset, either:
-- `cd` into the module folder itself first (e.g. `cd module-0-foundations`),
-  then run the command from there, **or**
-- adjust the path to point up and over into `data/`, e.g.
-  `../../data/energy_sample.csv` if you're running from inside a
-  `lectures/<slug>/` or `labs/<lab-slug>/` folder.
+Every `.py` file here starts with `#!/usr/bin/env python3`. That first
+line is called a **shebang**. It lets you run the file directly, like a
+command, once you've made it executable:
 
-If a command can't find the file, this is almost always why — double check
-where your terminal actually is (`pwd`) before assuming the file is missing.
+```
+chmod +x Module1_Lesson1_control-flow-conditionals_STUDENT.py   # once
+./Module1_Lesson1_control-flow-conditionals_STUDENT.py          # from then on
+```
 
-## Reading a terminal worksheet (the ` ``` ` blocks)
+`python3 file.py` treats that line as a comment, so both ways work.
+
+## Doing a Data Challenge
+
+1. Open the challenge's `DataChallengeOverview&Steps.md` and read the
+   scenario and Day 1 steps. Hints are tucked under each step: open one
+   only when you're stuck.
+2. Work in `<slug>_STUDENT.py`. Code goes under each step's banner; written
+   answers go in the `# Your answer:` comments.
+3. **Run it from the `data-challenges/` folder**, so the path
+   `data/<file>` points at the right place:
+   ```
+   cd module-1-python-foundations/data-challenges
+   python3 trace-the-path/trace-the-path_STUDENT.py
+   ```
+   A `FileNotFoundError` almost always means your terminal is in the wrong
+   folder. Check with `pwd`.
+4. Submit the way the overview's **Submitting Your Work** section says.
+
+## Module 0: reading a terminal worksheet (the ` ``` ` blocks)
 
 A `TERMINAL_WORKSHEET_STUDENT.md` file uses shaded blocks that start with
 three backtick marks and the word `bash`, like this:
