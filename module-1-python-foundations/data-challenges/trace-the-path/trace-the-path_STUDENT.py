@@ -170,16 +170,13 @@ volunteers = []
 days = []
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
-    # TODO: only append a volunteer this list does not already have.
     if volunteer is not volunteers:
         volunteers.append(volunteer)
-    # TODO: the same test again, for the day.
     if day is not days:
         days.append(day)
 
 checks = 0
 for volunteer in volunteers:
-    # TODO: the inner loop. One pass per weekday, for each volunteer.
     for day in days:
         checks = checks + 1
 
