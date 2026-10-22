@@ -181,7 +181,7 @@ does it. Paste it and move on. A later LiveLab explains what `open()`
 is actually doing.
 
 ```python
-with open("data/rec_center_signups.txt") as f:
+with open("rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 ```
