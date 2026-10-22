@@ -121,11 +121,6 @@ total = 0
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
     total += int(hours)
-    # TODO: add this shift's hours onto the running total. Mind the
-    #       type: everything that came out of that split is a string.
-    
-    # TODO: print one line per pass: the day, the volunteer, and the
-    #       total so far. This printed line IS the tracing tool.
     print(day, volunteer, "| running total:", total)
 
 print("total hours logged this week:", total)
@@ -146,9 +141,8 @@ print("total hours logged this week:", total)
 #
 # Be ready to answer "why did you do it that way?"
 
-# Your notes for the share out:
-#
-#
+# Your notes for the share out: (done)
+
 
 ############################################################################
 #  DAY 2
