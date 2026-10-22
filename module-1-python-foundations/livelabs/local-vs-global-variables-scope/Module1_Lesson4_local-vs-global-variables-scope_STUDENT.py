@@ -35,14 +35,32 @@ fill it in before you run the file again.
 #
 #
 print('----- 1. Local Scope, Live -----')
-# TODO: define make_total() with a local variable total set
+#  define make_total() with a local variable total set
 # to 100, returning it, then try printing total outside the
 # function and watch what happens
 
+
+num_val = 0 # global variable
+
+def make_total():
+    total = 100 # local variable
+    # print(total * 100)
+    # return total
+    # print(total)
+    return total * num_val
+    print(total)
+
+# make_total()
+
+
 # DISCUSS: Now try a new function. set_x() runs and sets x = 5 inside it, but
 #          print(x) outside raises NameError. Why?
+
+x = make_total()
+#print(x)
+#print make_total
 # Your answer:
-#
+# Becuase we never defined our variable.
 #
 
 
@@ -50,22 +68,48 @@ print('----- 1. Local Scope, Live -----')
 # Work out the price of a $100 item with 8% tax, using a tax rate stored
 # outside the function.
 print('----- 2. Reading a Global, Live -----')
-# TODO: define tax_rate as a global, then write
+# define tax_rate as a global, then write
 # price_with_tax(price) that reads it without taking it as
 # a parameter
 
+tax_rate = 0.8
+
+def price_with_tax(price):
+    x = price + (price * tax_rate)
+    return x
+
+print(price_with_tax(5.00))
+print(price_with_tax(100.00))
+
+                
 # DISCUSS: Copy the price_with_tax function from the Reading a Global code into
 #          a new file, without the tax_rate = 0.08 line. It worked here. Why
 #          does it break there?
 # Your answer:
-#
-#
+# Because of the variable scope (local/ global)
+# It secretly depends on a missing global.
 
 
 # ===== 3. Refactor: Global to Parameter =====
 # Pass the tax rate in as a parameter, so the function only uses what it is
 # given. It should still print 108.0.
 print('----- 3. Refactor: Global to Parameter -----')
-# TODO: rewrite price_with_tax so tax_rate is a parameter
+# rewrite price_with_tax so tax_rate is a parameter
 # instead of a global it secretly reads
+
 tax_rate = 0.08
+
+def price_with_tax(price, c_tax_rate):
+     return price + (price * c_tax_rate)
+
+
+print(price_with_tax(20, tax_rate))
+#print(price_with_tax(100.00))
+
+
+
+"""def add():
+    count = 0
+    count = count + 1
+    return count
+print(add)"""
