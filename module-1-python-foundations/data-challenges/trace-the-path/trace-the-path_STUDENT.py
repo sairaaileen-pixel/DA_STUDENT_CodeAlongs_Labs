@@ -206,16 +206,12 @@ for i in range(len(shifts) - 1):
     buggy_seen = buggy_seen + 1
 
 fixed_seen = 0
-# TODO: write the loop header that visits EVERY row, not all but one.
-#       The body below is already correct. Only the range changes.
 for i in range(len(shifts)):
     fixed_seen = fixed_seen + 1
 
 print("rows in the file:   ", len(shifts))
 print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
-# TODO: print the one row the buggy loop never reached. Reach into the
-#       list by position; do not retype the row by hand.
 print("the row it never saw:", shifts[-1])
 
 # ----- Share Out: Day 2 -----
