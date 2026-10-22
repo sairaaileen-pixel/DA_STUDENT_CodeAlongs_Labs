@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """Data Challenge: Trace the Path
 GitBook Quest 1.1: Trace the Path
 
@@ -43,19 +43,18 @@ SUBMIT
 ############################################################################
 
 # 1. What does one row represent?
-# Your answer:
-#
-#
+# Volunteer Names
+# Days worked
+# Shift hours
 
 # 2. Which fields hold numbers, and which hold text?
-# Your answer:
-#
-#
+# volunteer: text (string)
+# day: text (string)
+# hours: numbers (integer)
 
 # 3. What already looks wrong, missing or inconsistent?
-# Your answer:
-#
-#
+# Inconsistent hours for the the same person on the same day.
+# Inconsistent shift counts per volunteer.
 
 ############################################################################
 #  DAY 1
@@ -73,7 +72,7 @@ SUBMIT
 #    data/volunteer_shifts.txt above and it holds 12 shift rows. Read the
 #    third field on each row and count the rows where it is 4 or more. Write
 #    that one number in a comment at the top of this step, before you run a
-#    single line.
+#    single line. (5)
 # 3. Write the test for a long shift in the first TODO. "4 hours or more" is
 #    the rule, word for word.
 # 4. Write the counting line in the second TODO, moving long_shifts on by
@@ -84,24 +83,21 @@ SUBMIT
 # If the two differ, say which line you mis-read. Do not edit the
 # prediction.
 
-with open("data/volunteer_shifts.txt") as f:
+with open("volunteer_shifts.txt") as f:
     shifts = [line for line in f.read().splitlines()
               if line and not line.startswith("#")]
 
 long_shifts = 0
-for shift in shifts:
+for shift in shifts: 
     hours = int(shift.split(",")[2])
-    # TODO: write the test for a long shift. The coordinator counts a
-    #       shift of 4 hours or more.
-    if None:
-        # TODO: this is the counting line. Move long_shifts on by one.
-        long_shifts = None
+    if hours >= 4:
+        long_shifts += 1
+        print("shifts of 4+ hours:", long_shifts)
 
-print("shifts of 4+ hours:", long_shifts)
+# What .split() hands back: A list of strings split apart at the specified separator.
+# What the "," does: It acts as the delimiter telling Python where to chop the string, separating columns in our CSV-like text).
+# * Source : Python official documentation and standard string methods reference guides.
 
-# Your answer:
-#
-#
 
 # ===== Step 2: Total the Week's Hours, Printing the Running Total Each Pass =====
 # You already wrote a loop that counts. This one adds up instead, and you
@@ -124,12 +120,13 @@ print("shifts of 4+ hours:", long_shifts)
 total = 0
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
+    total += int(hours)
     # TODO: add this shift's hours onto the running total. Mind the
     #       type: everything that came out of that split is a string.
-    total = None
+    
     # TODO: print one line per pass: the day, the volunteer, and the
     #       total so far. This printed line IS the tracing tool.
-    print(day, volunteer, "| running total:", None)
+    print(day, volunteer, "| running total:", total)
 
 print("total hours logged this week:", total)
 
@@ -180,16 +177,16 @@ days = []
 for shift in shifts:
     volunteer, day, hours = shift.split(",")
     # TODO: only append a volunteer this list does not already have.
-    if None:
+    if volunteer is not volunteers:
         volunteers.append(volunteer)
     # TODO: the same test again, for the day.
-    if None:
+    if day is not days:
         days.append(day)
 
 checks = 0
 for volunteer in volunteers:
     # TODO: the inner loop. One pass per weekday, for each volunteer.
-    for day in None:
+    for day in days:
         checks = checks + 1
 
 print(len(volunteers), "volunteers x", len(days), "days =", checks)
@@ -220,7 +217,7 @@ for i in range(len(shifts) - 1):
 fixed_seen = 0
 # TODO: write the loop header that visits EVERY row, not all but one.
 #       The body below is already correct. Only the range changes.
-for i in None:
+for i in range(len(shifts)):
     fixed_seen = fixed_seen + 1
 
 print("rows in the file:   ", len(shifts))
@@ -228,7 +225,7 @@ print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-print("the row it never saw:", None)
+print("the row it never saw:", shifts[-1])
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
