@@ -44,18 +44,18 @@ SUBMIT
 
 # 1. What does one row represent?
 # Your answer:
-#
-#
+#  It represents the member's sign up records and holds the data for their name, class name and number of sessions
+
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
-#
-#
+# Field 1 (member) and Field 2 (class_name) hold text (strings).
+# Field 3 (sessions) holds integers.
+
 
 # 3. What already looks wrong, missing or inconsistent?
 # Your answer:
-#
-#
+# There is no formal CSV header row, only comment lines.
 
 ############################################################################
 #  DAY 1
@@ -78,11 +78,12 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
-with open("data/rec_center_signups.txt") as f:
+with open("/Users/sairaburgosrosario/Desktop/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/build-it-once/rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
 def total_sessions(records):
+    
     # TODO: add up the sessions column across every record in `records`
     # TODO: hand the total back to whoever called this. Do not print it.
     pass
