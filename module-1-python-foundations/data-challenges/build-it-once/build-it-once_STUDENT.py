@@ -78,21 +78,33 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
+# Prediction total sessions: 45
+# Prediction (swim only): 15
+
 with open("/Users/sairaburgosrosario/Desktop/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/build-it-once/rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
-def total_sessions(records):
-    
-    # TODO: add up the sessions column across every record in `records`
-    # TODO: hand the total back to whoever called this. Do not print it.
-    pass
+ # Prediction total sessions: 45
+# Prediction (swim only): 15
 
-swim_only = []
-# TODO: fill swim_only with just the Swim records
+# total sesions: 
+def total_sessions(records):
+    total = 0
+    for record in records:
+        parts = record.split(",")
+        total += int(parts[2])
+    return total
+
+# Swim only
+swim_only = [record for record in signups if record.split(",")[1] == "Swim"]
 
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
+
+# Otput 1 : 45
+#Output 2:15
+
 
 # ===== Step 2: Count Long Bookings at Two Different Cutoffs With One Function =====
 # The board changed the long-booking cutoff from 4 sessions to 2. Answering
@@ -114,14 +126,22 @@ print("swim only:  ", total_sessions(swim_only))
 # One of the two functions you just wrote gives you something back. The
 # other only puts something on the screen.
 
+# Prediction cutoff 4 or more: 7
+#Prediction cutoff 2 or more : 11
+
 def count_long_bookings(records, minimum):
-    # TODO: count the records whose sessions number is `minimum` or more
-    # TODO: return the count
-    pass
+    count = 0
+    for record in records:
+        sessions = record.split(",")
+        if int(sessions[2]) >= minimum:
+            count += 1 
+    return count
 
 def show_long_bookings(records, minimum):
+   count =  count_long_bookings(records, minimum)
+   print(f"There are {count} bookings with {minimum} or more sessions.")
     # TODO: print a sentence with the same count in it. Only print.
-    pass
+
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
