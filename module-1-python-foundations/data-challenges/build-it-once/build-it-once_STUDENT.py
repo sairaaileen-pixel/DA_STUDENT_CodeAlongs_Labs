@@ -380,7 +380,7 @@ for member in ["Nia", "Omar", "Tess", "Rafi", "Gwen"]:
 # TODO: an empty list 
 print("Empty list:", total_for([], "Nia"))
 # TODO: a list holding exactly one record
-
+print("One record:", total_for(signups[1:2], "Nia"))
 # TODO: a member name that is not in the file at all
 # TODO: a name that differs from a real member's only by capitalization
 # TODO: then: do the per-member totals add up to the whole-file total?
