@@ -103,7 +103,7 @@ print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
 
 # Otput 1 : 45
-#Output 2:15
+#Output 2: 15
 
 
 # ===== Step 2: Count Long Bookings at Two Different Cutoffs With One Function =====
@@ -127,7 +127,7 @@ print("swim only:  ", total_sessions(swim_only))
 # other only puts something on the screen.
 
 # Prediction cutoff 4 or more: 7
-#Prediction cutoff 2 or more : 11
+# Prediction cutoff 2 or more : 11
 
 def count_long_bookings(records, minimum):
     count = 0
@@ -140,8 +140,6 @@ def count_long_bookings(records, minimum):
 def show_long_bookings(records, minimum):
    count =  count_long_bookings(records, minimum)
    print(f"There are {count} bookings with {minimum} or more sessions.")
-    # TODO: print a sentence with the same count in it. Only print.
-
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
@@ -150,8 +148,11 @@ handed_back = show_long_bookings(signups, 4)
 print("what show_long_bookings handed back:", handed_back)
 
 # Your answer:
-#
-#
+# The parameter is minimum, 4 and 2 are the arguments.
+# show_long_bookings handed back: None, because we used print()
+# instead of return.
+
+
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -169,8 +170,8 @@ print("what show_long_bookings handed back:", handed_back)
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# print only outputs text to the screen for human viewing, but does not pass data back, that is why we use return on functions.
+
 
 ############################################################################
 #  DAY 2
@@ -196,19 +197,35 @@ print("what show_long_bookings handed back:", handed_back)
 # Both versions run clean. Decide which of the two you would trust in a file
 # you did not write, and say what in the call line told you.
 
+
+# Prediction 1: The sessions_cutoff = 4, should return 7.
+# Prediction 2: The variable stills being 2, the print value should  be 11 .
+
 sessions_cutoff = 4
 
 def count_reaching_outside(records):
-    # TODO: same count as count_long_bookings, but take NO minimum
-    # parameter. Read sessions_cutoff from outside the function instead.
-    pass
+    count = 0
+    for record in records[1:]:
+        sessions = record.split(",")
+        if int(sessions[2]) >= sessions_cutoff:
+            count += 1
+    return count
+
+    
+    
 
 print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
 
 sessions_cutoff = 2
 
-# TODO: call count_reaching_outside(signups) again, unchanged, and print it
-# TODO: print count_long_bookings(signups, 4) underneath for comparison
+print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+print("count_long_bookings(signups, 4) gives", count_long_bookings(signups, 4))
+
+# Which of the two you would trust in a file you did not write, and what in the call line told you:
+# I would trust count_long_bookings more because The other function uses a hidden global variable that can change without warning.
+
+
+
 
 # ===== Step 4: Pass the Last Member In and Out, Then Trigger an UnboundLocalError =====
 # The coordinator wants each sign-up printed next to the one before it. The
@@ -236,13 +253,20 @@ sessions_cutoff = 2
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
 
+# predictions: It will print previous: nobody yet
+
 def log_signup(record, previous_member):
+    current_member = record.split(",")[0]
+    print(f"Previous: {previous_member}, current: {current_member}")
+    return current_member
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
     # TODO: return this member's name
     pass
 
 last_member = "nobody yet"
+last_member = log_signup(signups[0], last_member)
+last_member = log_signup(signups[1], last_member)
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
 
@@ -254,11 +278,13 @@ def log_signup_broken(record):
     last_seen = record.split(",")[0]
     return last_seen
 
-log_signup_broken(signups[2])
+# It will break.
+
+#log_signup_broken(signups[2])
 
 # Your answer:
-#
-#
+# UnboundLocalError: local variable 'last_seen' referenced before assignment
+
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -275,8 +301,8 @@ log_signup_broken(signups[2])
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
-#
-#
+# The Exception: UnboundLocalError on the variable last_seen.
+
 
 ############################################################################
 #  DAY 3
@@ -303,17 +329,30 @@ log_signup_broken(signups[2])
 
 # Three function names. Everything else is yours.
 
+# Prediction  Gwen's total: 9
+
 def sessions_in(record):
-    pass
+
+ parts = record.split(",")
+ return int(parts[2]) 
 
 def signups_for(records, member):
-    pass
+    return [record for record in records if record.split(",")[0] == member]
 
 def total_for(records, member):
-    # This one should get its work done by calling the other two.
-    pass
 
-# TODO: print a line per member
+    member_records = signups_for(records, member)
+    total = 0
+    for record in member_records:
+        total += sessions_in(record)
+    return total
+
+    # This one should get its work done by calling the other two.
+
+for member in ["Nia", "Omar", "Tess", "Rafi", "Gwen"]:
+    print(member, total_for(signups[1:], member))
+
+ # Printed: Gwen 8   
 
 # ===== Step 6: Run total_for() on Five Inputs Nobody Asked For, Then Judge Each Answer =====
 # No new functions. Call the ones you already have on inputs nobody asked
@@ -338,8 +377,10 @@ def total_for(records, member):
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
 
-# TODO: an empty list
+# TODO: an empty list 
+print("Empty list:", total_for([], "Nia"))
 # TODO: a list holding exactly one record
+
 # TODO: a member name that is not in the file at all
 # TODO: a name that differs from a real member's only by capitalization
 # TODO: then: do the per-member totals add up to the whole-file total?
