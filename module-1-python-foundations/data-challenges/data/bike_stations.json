@@ -1,0 +1,72 @@
+[
+  {
+    "station_id": "BK-0117",
+    "name": "Grand Army Plaza",
+    "capacity": 48,
+    "bikes_available": 6,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "BK-0204",
+    "name": "Flatbush Ave & Bergen St",
+    "capacity": 31,
+    "bikes_available": 29,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "MN-0881",
+    "name": "W 52 St & 11 Ave",
+    "capacity": 55,
+    "bikes_available": 4,
+    "needs_maintenance": true
+  },
+  {
+    "station_id": "MN-0402",
+    "name": "Cooper Square & Astor Pl",
+    "capacity": 42,
+    "bikes_available": 40,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "QN-0533",
+    "name": "Vernon Blvd & 50 Ave",
+    "capacity": 24,
+    "bikes_available": 3,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "BK-0376",
+    "name": "Bedford Ave & Nassau Ave",
+    "capacity": 39,
+    "bikes_available": 18,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "MN-0150",
+    "name": "E 17 St & Broadway",
+    "capacity": 60,
+    "bikes_available": 11,
+    "needs_maintenance": true
+  },
+  {
+    "station_id": "BX-0712",
+    "name": "Grand Concourse & E 161 St",
+    "capacity": 20,
+    "bikes_available": 20,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "QN-0620",
+    "name": "Jackson Ave & 46 Rd",
+    "capacity": 27,
+    "bikes_available": 2,
+    "needs_maintenance": false
+  },
+  {
+    "station_id": "MN-0995",
+    "name": "Amsterdam Ave & W 125 St",
+    "capacity": 35,
+    "bikes_available": 33,
+    "needs_maintenance": false
+  }
+]

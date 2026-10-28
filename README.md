@@ -108,14 +108,20 @@ chmod +x Module1_Lesson1_control-flow-conditionals_STUDENT.py   # once
    only when you're stuck.
 2. Work in `<slug>_STUDENT.py`. Code goes under each step's banner; written
    answers go in the `# Your answer:` comments.
-3. **Run it from the `data-challenges/` folder**, so the path
-   `data/<file>` points at the right place:
-   ```
-   cd module-1-python-foundations/data-challenges
-   python3 trace-the-path/trace-the-path_STUDENT.py
-   ```
-   A `FileNotFoundError` almost always means your terminal is in the wrong
-   folder. Check with `pwd`.
+3. **Point your file at the data.** Every data file lives in
+   `data-challenges/data/`. Organizing your own folders is part of the job:
+   - **Challenges 3 and later:** the top of your `_STUDENT.py` has a line like
+     `DATA_FILE = "station_taps.csv"  # edit the filepath with the data`.
+     Either copy the data file next to your `.py`, or change that line to
+     the file's real path, for example `"../data/station_taps.csv"`.
+   - **Trace the Path and Build It Once:** run them from the
+     `data-challenges/` folder so the path `data/<file>` resolves:
+     ```
+     cd module-1-python-foundations/data-challenges
+     python3 trace-the-path/trace-the-path_STUDENT.py
+     ```
+   A `FileNotFoundError` almost always means the path and your terminal's
+   folder don't match. Check with `pwd` and `ls`.
 4. Submit the way the overview's **Submitting Your Work** section says.
 
 ## Module 0: reading a terminal worksheet (the ` ``` ` blocks)

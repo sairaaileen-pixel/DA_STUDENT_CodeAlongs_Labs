@@ -1,0 +1,26 @@
+employee_id,name,day,hours,rate
+E101,Rosa Alvarez,Mon,8,24.00
+E102,Darnell Pierce,Mon,10,31.50
+E103,Mei Tanaka,Mon,6,28.00
+E104,Samuel Okafor,Mon,7,22.00
+E105,Priya Raman,Mon,9,35.00
+E101,Rosa Alvarez,Tue,8,24.00
+E102,Darnell Pierce,Tue,9,31.50
+E103,Mei Tanaka,Tue,7,28.00
+E104,Samuel Okafor,Tue,8,22.00
+E105,Priya Raman,Tue,9,35.00
+E101,Rosa Alvarez,Wed,8,24.00
+E102,Darnell Pierce,Wed,10,31.50
+E103,Mei Tanaka,Wed,8,28.00
+E104,Samuel Okafor,Wed,8,22.00
+E105,Priya Raman,Wed,9,35.00
+E101,Rosa Alvarez,Thu,8,24.00
+E102,Darnell Pierce,Thu,9,31.50
+E103,Mei Tanaka,Thu,6,28.00
+E104,Samuel Okafor,Thu,8,22.00
+E105,Priya Raman,Thu,8,35.00
+E101,Rosa Alvarez,Fri,8,24.00
+E102,Darnell Pierce,Fri,8,31.50
+E103,Mei Tanaka,Fri,5,28.00
+E104,Samuel Okafor,Fri,7,22.00
+E105,Priya Raman,Fri,9,35.00
