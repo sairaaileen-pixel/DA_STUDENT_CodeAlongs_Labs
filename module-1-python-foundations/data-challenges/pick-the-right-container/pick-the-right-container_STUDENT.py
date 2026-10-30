@@ -16,12 +16,18 @@ taps = rows[1:]
 
 # Step 1: Write `scan_for()` and Count Its Comparisons for Three Tap IDs
 def scan_for(tap_id, records):
-    # TODO: assign `comparisons` to 0
-    # TODO: loop over `records`; add 1 to `comparisons` for every row
-    # TODO: inside the loop, return `comparisons` when row[0] == tap_id
-    # TODO: after the loop, return `comparisons`
-    pass
-
+     
+    # Assign `comparisons` to 0
+     comparisons = 0
+    # Loop over `records`; add 1 to `comparisons` for every row
+     for record in records:
+         comparisons += 1
+    # Inside the loop, return `comparisons` when row[0] == tap_id
+     if record[0] == tap_id:
+         return comparisons
+    # After the loop, return `comparisons`
+         return comparisons
+    
 
 print("columns:", header)
 print("rows in the log:", len(taps))
@@ -29,19 +35,36 @@ print("comparisons to find T001:", scan_for("T001", taps))
 print("comparisons to find T040:", scan_for("T040", taps))
 print("comparisons to find T999:", scan_for("T999", taps))
 
-# Step 1, answer 1:
-#
+# Output: 
+# comparisons to find T001: None
+# comparisons to find T040: 40
+# comparisons to find T999: None
+
+# Step 1, answer 1: 
+# Prediction: 
+# T001:1
+# T040: 40
+# T999: 40
+   
 # Step 1, answer 2:
-#
+# We should plan around T999 because it represents the worst-case scenario. 
+# It requires a full linear scan of every record and still fails to find the item. 
+# As the dataset size grows, the cost of the scan scales linearly.
 
 
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
 for size in [5, 10, 20, 40]:
     worst = scan_for("T999", taps[:size])
     # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
+    print("rows:", size, " worst-case comparisons:", worst )
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
+pairs = 0
+for  tap in taps:
+    for pair in pairs: 
 # TODO: add 1 to `pairs` in the inner loop
+      pairs += 1
 # TODO: print len(taps) and `pairs`
+     
 # TODO: assign `big` to len(taps) * 10
 # TODO: print the scan's worst case and the pair loop's count on `big` rows
 

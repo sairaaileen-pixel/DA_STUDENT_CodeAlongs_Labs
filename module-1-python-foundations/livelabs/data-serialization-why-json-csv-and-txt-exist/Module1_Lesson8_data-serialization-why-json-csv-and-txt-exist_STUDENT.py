@@ -8,6 +8,11 @@ print('----- 1. Writing to a File -----')
 # TODO: write "Restock staplers" and "Restock printer paper"
 # TODO: end each line with "\n"
 
+with open("notes.txt, "w") as f:
+          f.write("Restock staplers\n")
+          f.write("Restock printer paper\n")
+          
+
 
 # ===== 2. Reading It Back =====
 # Open notes.txt again and print everything inside it.
@@ -15,8 +20,11 @@ print('----- 2. Reading It Back -----')
 # TODO: use a `with` block and open("notes.txt")
 # TODO: print its full contents with f.read()
 
+with open("notes.txt") as f:
+     print(f.read())
+
 # PREDICT before you run: Rewrite notes.txt in "w" mode. Do old lines survive?
-# Your answer:
+# Your answer: Replace the old lines
 #
 
 
