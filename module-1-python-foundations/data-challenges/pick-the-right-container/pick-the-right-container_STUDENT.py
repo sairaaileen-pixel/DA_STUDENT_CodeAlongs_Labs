@@ -141,13 +141,29 @@ print("busiest card:", card_ids[busiest], "with", max(tap_counts), "taps")
 
 
 # Step 4: Count Taps Per Card With a Dictionary, and Stations With a Set
-# TODO: assign `taps_by_card` to an empty dict (card ID: tap count)
-# TODO: assign `lookups` to 0
+# Assign `taps_by_card` to an empty dict (card ID: tap count)
+taps_by_card = {}
+# Assign `lookups` to 0
+lookups = 0
 # TODO: loop over `taps`; add 1 to `lookups`
+for row in taps:
+    lookups += 1
 # TODO: add 1 to row[1]'s count in `taps_by_card`, or set it to 1 if new
+    card = row[1]
+    if card in taps_by_card:
+        taps_by_card[card] += 1
+    else:
+        taps_by_card[card] = 1
 # TODO: assign `stations` to set(); loop over `taps` and .add() row[2]
+        stations = set()
+for row in taps:
+        stations.add(row[2])
 # TODO: assign `repeat_riders` to 0
+repeat_riders = 0
 # TODO: loop over `taps_by_card`; add 1 to `repeat_riders` if a count is > 1
+for card in taps_by_card:
+    if taps_by_card[card] > 1:
+        repeat_riders +=1
 
 print("distinct cards:", len(taps_by_card))
 print("lookups the dictionary needed:", lookups)
@@ -156,25 +172,30 @@ print("cards that tapped more than once:", repeat_riders)
 print("taps for C001:", taps_by_card["C001"])
 
 # Step 4, answer 1:
-#
+# Lookups equal 40 (one per row in the dataset) because of O(1) access.
+
 # Step 4, answer 2:
-#
+# Parallel lists slow down as data grows because they have to scan through items, while dictionaries stay fast with constant-time lookups (O(1)).
+
 # Step 4, answer 3:
-#
+# - Dictionary job: Maps card IDs to their total tap counts, finding what it needs instantly via hash keys (O(1)).
+# - Set job: Collects unique station names and automatically discards duplicates.
+# - List cost for stations: Using a standard list would have cost us an O(n) membership check (`in`) for every single row to manually search and prevent duplicate stations, making it much slower.
+
 # Step 4, answer 4:
-#
+# Card C001 (which has 6 taps) explains the gap between total distinct cards and repeat riders, because riders with more than one tap count toward repeat riders.
 
 
 # ===== Day 3 =====
 
 # Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
-# TODO: replace each None with your Day 2 value; keep `stations` a set
+# Replace each None with your Day 2 value; keep `stations` a set
 summary = {
     "service_day": "2026-03-02",
-    "total_taps": None,
-    "distinct_cards": None,
-    "stations": None,
-    "taps_by_card": None,
+    "total_taps": len(taps),
+    "distinct_cards": len(taps_by_card),
+    "stations": stations,
+    "taps_by_card": taps_by_card,
 }
 
 print("about to serialize", len(summary), "keys")
