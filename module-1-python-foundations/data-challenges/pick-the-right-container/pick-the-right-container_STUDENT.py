@@ -16,17 +16,17 @@ taps = rows[1:]
 
 # Step 1: Write `scan_for()` and Count Its Comparisons for Three Tap IDs
 def scan_for(tap_id, records):
-     
     # Assign `comparisons` to 0
      comparisons = 0
     # Loop over `records`; add 1 to `comparisons` for every row
      for record in records:
          comparisons += 1
+         if record[0] == tap_id:
+           return comparisons
     # Inside the loop, return `comparisons` when row[0] == tap_id
-     if record[0] == tap_id:
-         return comparisons
+
     # After the loop, return `comparisons`
-         return comparisons
+     return comparisons
     
 
 print("columns:", header)
@@ -36,9 +36,9 @@ print("comparisons to find T040:", scan_for("T040", taps))
 print("comparisons to find T999:", scan_for("T999", taps))
 
 # Output: 
-# comparisons to find T001: None
+# comparisons to find T001: 1
 # comparisons to find T040: 40
-# comparisons to find T999: None
+# comparisons to find T999: 40
 
 # Step 1, answer 1: 
 # Prediction: 
@@ -56,21 +56,39 @@ print("comparisons to find T999:", scan_for("T999", taps))
 for size in [5, 10, 20, 40]:
     worst = scan_for("T999", taps[:size])
     # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
-    print("rows:", size, " worst-case comparisons:", worst )
+    print("rows:", size, "| worst-case comparisons:", worst )
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
 pairs = 0
 for  tap in taps:
-    for pair in pairs: 
+    for pair in taps: 
 # TODO: add 1 to `pairs` in the inner loop
-      pairs += 1
+        pairs += 1
 # TODO: print len(taps) and `pairs`
+print("rows:", len(taps),"| pair loop comparisons:", pairs)
      
 # TODO: assign `big` to len(taps) * 10
+big = len(taps) * 10
 # TODO: print the scan's worst case and the pair loop's count on `big` rows
+print("rows:", big, "| scan worst-case comparisons:", big)
+print("rows:", big, "| pair loop comparisons:", big * big)
+
+# --- EXCEEDING EXPECTATIONS: Doubled Data Test ---
+
+# Prediction: 
+#1: scan_for "T999", doubled: 80 (because of linear scan)
+#2: scan_for "T001", doubled: 1 (stil 1 because is the first item)
+doubled = taps + taps
+
+print("rows:", len(doubled), "| worst-case scan (T999):", scan_for("T999", doubled))
+print("rows:", len(doubled), "| best-case scan (T001):", scan_for("T001", doubled))
 
 # Step 2, answer 1:
-#
+# Arithmetic: Scan at 5=5, 10=10, 20=20, 40=40.
+# Pair loop on 40 rows = 40 * 40 = 1600. 
+# Scan on 400 rows = 400. Pair loop on 400 rows = 400 * 400 = 160,000.
+
 # Step 2, answer 2:
+# The linear scan grows in direct proportion to the input size (linear growth).
 #
 
 
