@@ -1,0 +1,27 @@
+{
+  "service_day": "2026-03-02",
+  "total_taps": 40,
+  "distinct_cards": 12,
+  "stations": [
+    "Atlantic Av",
+    "Franklin Av",
+    "Grand Central",
+    "Jay St",
+    "Nostrand Av",
+    "Union Sq"
+  ],
+  "taps_by_card": {
+    "C001": 6,
+    "C002": 5,
+    "C003": 5,
+    "C004": 4,
+    "C005": 4,
+    "C006": 3,
+    "C007": 3,
+    "C008": 3,
+    "C009": 2,
+    "C010": 2,
+    "C011": 2,
+    "C012": 1
+  }
+}

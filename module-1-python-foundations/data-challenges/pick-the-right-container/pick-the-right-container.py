@@ -195,13 +195,14 @@ summary = {
     "service_day": "2026-03-02",
     "total_taps": len(taps),
     "distinct_cards": len(taps_by_card),
-    "stations": stations,
+    "stations": sorted(stations),
     "taps_by_card": taps_by_card,
 }
 
 print("about to serialize", len(summary), "keys")
 # run the file and answer below before you change anything
 # then put # in front of the next two lines so Step 6 can run
+for key in summary: print(key, type(summary[key]))
 # text = json.dumps(summary, indent=2)
 # print(text)
 
@@ -216,10 +217,15 @@ print("about to serialize", len(summary), "keys")
 
 
 # Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
-# TODO: assign summary["stations"] to a type JSON can hold; keep the key
-# TODO: json.dump() `summary` into a with open("tap_summary.json", "w")
-# TODO: replace None with json.load() of "tap_summary.json"
-reloaded = None
+# Assign summary["stations"] to a type JSON can hold; keep the key
+
+#  json.dump() `summary` into a with open("tap_summary.json", "w")
+with open("tap_summary.json", "w") as outfile:
+    json.dump(summary, outfile, indent=2)
+
+# Replace None with json.load() of "tap_summary.json"
+with open("tap_summary.json", "r") as f:
+ reloaded = json.load(f)
 
 print("total_taps came back as:", reloaded["total_taps"])
 print("taps_by_card came back as a", type(reloaded["taps_by_card"]).__name__)
@@ -228,6 +234,6 @@ print("stations came back as a", type(reloaded["stations"]).__name__)
 print("round trip identical:", reloaded["taps_by_card"] == taps_by_card)
 
 # Step 6, answer 1:
-#
+# Yes, the overnight job can pull an individual card's count straight from this file without needing the raw log. We know this because `taps_by_card` survived the save-and-reload completely intact as a dictionary, meaning all the card totals are ready to look up right away.
 # Step 6, answer 2:
-#
+# The dictionary survived the round trip unchanged, but the set came back as a list.
