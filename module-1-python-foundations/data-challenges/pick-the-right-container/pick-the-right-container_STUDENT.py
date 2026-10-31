@@ -145,22 +145,22 @@ print("busiest card:", card_ids[busiest], "with", max(tap_counts), "taps")
 taps_by_card = {}
 # Assign `lookups` to 0
 lookups = 0
-# TODO: loop over `taps`; add 1 to `lookups`
+#Loop over `taps`; add 1 to `lookups`
 for row in taps:
     lookups += 1
-# TODO: add 1 to row[1]'s count in `taps_by_card`, or set it to 1 if new
+# Add 1 to row[1]'s count in `taps_by_card`, or set it to 1 if new
     card = row[1]
     if card in taps_by_card:
         taps_by_card[card] += 1
     else:
         taps_by_card[card] = 1
-# TODO: assign `stations` to set(); loop over `taps` and .add() row[2]
+# Assign `stations` to set(); loop over `taps` and .add() row[2]
         stations = set()
 for row in taps:
         stations.add(row[2])
-# TODO: assign `repeat_riders` to 0
+# Assign `repeat_riders` to 0
 repeat_riders = 0
-# TODO: loop over `taps_by_card`; add 1 to `repeat_riders` if a count is > 1
+# Loop over `taps_by_card`; add 1 to `repeat_riders` if a count is > 1
 for card in taps_by_card:
     if taps_by_card[card] > 1:
         repeat_riders +=1
@@ -190,6 +190,7 @@ print("taps for C001:", taps_by_card["C001"])
 
 # Step 5: Save the Summary as JSON and Read the TypeError a Set Causes
 # Replace each None with your Day 2 value; keep `stations` a set
+
 summary = {
     "service_day": "2026-03-02",
     "total_taps": len(taps),
@@ -199,17 +200,19 @@ summary = {
 }
 
 print("about to serialize", len(summary), "keys")
-# TODO: run the file and answer below before you change anything
-# TODO: then put # in front of the next two lines so Step 6 can run
-text = json.dumps(summary, indent=2)
-print(text)
+# run the file and answer below before you change anything
+# then put # in front of the next two lines so Step 6 can run
+# text = json.dumps(summary, indent=2)
+# print(text)
 
 # Step 5, answer 1:
-#
+# TypeError: Object of type set is not JSON serializable
+
 # Step 5, answer 2:
-#
+# The key that is causing the error is the "stations" key, because a JSON file does not have a native data type for Python sets.
+
 # Step 5, answer 3:
-#
+# Yes, "about to serialize" printed first. That tells us code runs from top to bottom.
 
 
 # Step 6: Write `tap_summary.json`, Reload It, and Check Which Types Survived
