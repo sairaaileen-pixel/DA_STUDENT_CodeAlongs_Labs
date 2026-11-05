@@ -1,0 +1,16 @@
+request_id,complaint_type,borough,days_open,status
+SR-1001,Noise - Residential,Brooklyn,3,Closed
+SR-1002,Illegal Parking,Queens,1,Closed
+SR-1003,Street Light Out,Bronx,12,Open
+SR-1004,Rodent,,6,Closed
+SR-1005,Water System,Manhattan,2,In Progress
+SR-1006,Noise - Residential,Staten Island,8,Open
+SR-1007,Illegal Parking,Brooklyn,3 days,Open
+SR-1008,Sidewalk Condition,Queens,21,In Progress
+SR-1009,Water System,Queens,4,Escalated
+SR-1010,Rodent,Manhattan,9,Closed
+SR-1011,Street Light Out,Bronx,2
+SR-1012,Noise - Residential,Brooklyn,5,In Progress
+SR-1013,Sidewalk Condition,Manhattan,-3,Open
+SR-1014,Illegal Parking,Staten Island,7,Closed
+SR-1015,Water System,Bronx,14,Open

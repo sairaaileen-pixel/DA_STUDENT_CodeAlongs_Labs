@@ -44,10 +44,17 @@ with open("supply.csv") as f:
 # ===== 4. Serializing a Record With json.dump() =====
 # Save one supply record, stored as a dict, to a file called supply.json.
 print('----- 4. Serializing a Record With json.dump() -----')
-# TODO: import json
+ import json
 # TODO: create a dict called supply: name, count and department
 # TODO: use "Stapler", 12 and "Office"
 # TODO: open "supply.json" in write mode; save the dict with json.dump()
+
+import json 
+supply = {"Stapler": 12, "Deparment": "Office", "name": "Stapler"}
+with open("supply.json"), "w") as f: 
+    json.dump(supply, f)
+
+print(f)
 
 
 # ===== 5. Deserializing It Back With json.load() =====
@@ -57,6 +64,12 @@ print('----- 5. Deserializing It Back With json.load() -----')
 # TODO: open "supply.json"; read it into supply with json.load()
 # TODO: print supply["name"], then print type(supply)
 
+with open("supply.json") as f:
+ suppply =  json.load(f)
+
+ print(supply["name"])
+ print(type(supply))
+
 # PREDICT before you run: Dump a tuple to JSON and load it back. What type?
-# Your answer:
+# Your answer: It comes back as a list
 #
