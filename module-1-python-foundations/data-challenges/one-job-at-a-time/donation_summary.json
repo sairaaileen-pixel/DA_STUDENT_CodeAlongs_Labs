@@ -1,0 +1,74 @@
+{
+  "records": 17,
+  "total_pounds": 300.0,
+  "pounds_per_item": {
+    "rice": {
+      "donations": 1,
+      "pounds": 25.0
+    },
+    "black beans": {
+      "donations": 1,
+      "pounds": 18.0
+    },
+    "apples": {
+      "donations": 1,
+      "pounds": 12.0
+    },
+    "pasta": {
+      "donations": 1,
+      "pounds": 30.0
+    },
+    "milk": {
+      "donations": 1,
+      "pounds": 8.0
+    },
+    "carrots": {
+      "donations": 1,
+      "pounds": 15.0
+    },
+    "tuna": {
+      "donations": 1,
+      "pounds": 22.0
+    },
+    "eggs": {
+      "donations": 1,
+      "pounds": 6.0
+    },
+    "potatoes": {
+      "donations": 1,
+      "pounds": 40.0
+    },
+    "diced tomatoes": {
+      "donations": 1,
+      "pounds": 16.0
+    },
+    "oatmeal": {
+      "donations": 1,
+      "pounds": 10.0
+    },
+    "onions": {
+      "donations": 1,
+      "pounds": 20.0
+    },
+    "chicken soup": {
+      "donations": 1,
+      "pounds": 24.0
+    },
+    "cheese": {
+      "donations": 1,
+      "pounds": 12.0
+    },
+    "ground turkey": {
+      "donations": 1,
+      "pounds": 9.0
+    },
+    "squash": {
+      "donations": 1,
+      "pounds": 18.0
+    },
+    "cornmeal": {
+      "donations": 1,
+      "pounds": 15.0
+    }
+  }
+}

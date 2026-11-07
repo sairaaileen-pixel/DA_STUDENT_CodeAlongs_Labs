@@ -1,0 +1,21 @@
+donation_id,item,category,pounds,received_on
+D001,rice,grains,25,2026-09-01
+D002,black beans,canned,18,2026-09-01
+D003,apples,produce,12,2026-09-02
+D004,pasta,grains,30,2026-09-02
+D005,milk,dairy,8,2026-09-03
+D006,carrots,produce,15,2026-09-03
+D007,tuna,canned,22,2026-09-04
+D008,eggs,protein,6,2026-09-04
+D009,peanut butter,,14,2026-09-05
+D010,potatoes,produce,40,2026-09-05
+D011,diced tomatoes,canned,16,2026-09-06
+D012,oatmeal,grains,10,2026-09-06
+D013,flour,grains,twenty,2026-09-07
+D014,onions,produce,20,2026-09-07
+D015,chicken soup,canned,24,2026-09-08
+D016,cheese,dairy,12,2026-09-08
+D017,corn,canned,2026-09-09
+D018,ground turkey,protein,9,2026-09-09
+D019,squash,produce,18,2026-09-10
+D020,cornmeal,grains,15,2026-09-10
