@@ -29,20 +29,32 @@ print('----- 1. Step 1: Just Look at the Data -----')
 # TODO: create a list called lines with these 5 strings:
 # "ADD,Chess,4", "ADD,Checkers,two", "ADD,Uno", "" (empty), "ADD,Clue,6"
 
+lines = ["ADD,Chess,4", "ADD,Checkers,two", "ADD,Uno", "", "ADD,Clue,6"
+]
 
 # TODO: loop over lines and print each one
+for line in lines:
+    print(line)
 
 
 # ===== 2. Step 2: Check Each Line's Shape =====
 # Check each line and report whether it has exactly three fields.
 print("----- 2. Step 2: Check Each Line's Shape -----")
 # TODO: loop over lines
+for line in lines:
 # TODO: split each line on "," into a variable called fields
+    fields = line.split(",")
 # TODO: if fields has exactly 3 items, print "Looks valid:" and the line
+    if len(fields) == 3:
+        print("Looks valid:", line)
 # TODO: otherwise, print "Wrong number of fields:" and the line
+    else:
+        print("Wrong number of fields:",line)
+
+
 
 # PREDICT before you run: Which message prints for "ADD,Uno"?
-# Your answer:
+# Your answer: Wrong number of fields
 #
 #
 
@@ -53,22 +65,43 @@ print("----- 2. Step 2: Check Each Line's Shape -----")
 print('----- 3. Step 3: Wrap It in a Real Function -----')
 # TODO: define validate_batch(lines) — move Step 2's loop and
 # conditional inside it
+def validate_batch(lines):
+    for line in lines:
+        fields = line.split(",")
+        if len(fields) == 3:
+            print("Looks valid:", line)
+        else:
+              print("Wrong number of fields:",line)
+
+            
+        
 
 
 # TODO: call validate_batch(lines)
+validate_batch(lines)
 
 
 # ===== 4. Step 4: Add enumerate() =====
 # Use enumerate() so each message names its line number, starting at 1.
 print('----- 4. Step 4: Add enumerate() -----')
 # TODO: change the loop to "for line_number, line in
+def validate_batch_update(lines):
+    for line_number, line in enumerate(lines, start = 1):
+        fields = line.split(",")
+        if len(fields) == 3:
+            print(f"Line, {line_number} :Looks valid")
+        else:
+            print(f"Line {line_number} :Wrong number")
+
+validate_batch_update(lines)
+
 # enumerate(lines, start=1):"
 # TODO: update both print statements to use f"Line {line_number}: ..."
 # instead of printing the line's text
 
 # PREDICT before you run: Delete start=1, so the loop reads enumerate(lines).
 #                         What line number does "ADD,Uno" get?
-# Your answer:
+# Your answer: starts at 0
 #
 #
 
@@ -82,6 +115,21 @@ print('----- 5. Putting It Together: Both Checks at Once -----')
 # TODO: elif fields[2] isn't all digits (.isdigit()), report
 # "bad players"
 # TODO: else, unpack fields into action, title, players and report
+
+
+def validate_batch_update2(lines):
+    for line_number, line in enumerate(lines,1):
+        fields = line.split(",")
+        if len(fields) != 3:
+            print(f"Line, {line_number} :bad format!")
+        elif not fields[2].isdigit():
+            print(f"Line{line_number}: bad players!")
+        else:
+            action, title, players = fields
+            print(f"Line {line_number} : Ok,{title}")
+
+validate_batch_update2(lines)
+
 # "OK, {title}"
 
 # PREDICT before you run: Which check flags "ADD,Checkers,two"? The len(fields)
