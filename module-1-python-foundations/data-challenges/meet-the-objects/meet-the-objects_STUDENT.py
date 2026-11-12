@@ -55,9 +55,9 @@ for i in range(len(names)):
 
 # Step 2: Define the Station Class and Prove Two Instances Are Independent
 class Station:
-    # TODO: add __init__ with name (str), capacity and bikes_available (int)
-    # TODO: in __init__, assign each parameter to self.<same name>
-    # TODO: add a parameter and self.<name> for each extra field you agreed
+    # Add __init__ with name (str), capacity and bikes_available (int)
+    # In __init__, assign each parameter to self.<same name>
+    # Add a parameter and self.<name> for each extra field you agreed
 
     def __init__(self, station_id, name, capacity, bikes_available, needs_maintenance):
            self.station_id = station_id
@@ -66,14 +66,14 @@ class Station:
            self.bikes_available = bikes_available
            self.needs_maintenance = needs_maintenance
    
-    # TODO: add needs_restock(self): True if bikes_available < capacity / 4
+    # Add needs_restock(self): True if bikes_available < capacity / 4
     def needs_restock(self):
        return self.bikes_available < (self.capacity/4)
           
        
 
 
-# TODO: assign `fleet` to []; loop over `stations` as `s`
+# Assign `fleet` to []; loop over `stations` as `s`
 fleet = []
 for s in stations:
     station_obj = Station (
@@ -86,14 +86,14 @@ for s in stations:
     ) 
     fleet.append(station_obj)
 
-# TODO: assign `busy`, `quiet` to two stations with equal needs_restock()
+# Assign `busy`, `quiet` to two stations with equal needs_restock()
 busy = fleet[1]
 quiet = fleet[3]
-# TODO: print both needs_restock() answers
+# Print both needs_restock() answers
 print("Before change:")
 print(f"{busy.name}, needs restock:", busy.needs_restock())
 print(f"{quiet.name}, needs restock:", quiet.needs_restock())
-# TODO: set busy.bikes_available to 0, then print both answers again
+# Set busy.bikes_available to 0, then print both answers again
 busy.bikes_available = 0
 
 print("After change:")

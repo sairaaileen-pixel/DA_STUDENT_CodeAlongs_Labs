@@ -155,7 +155,7 @@ for func in [read_donations, validate_donation, summarize_donations,
 
 # Step 3, answer 2:
 # None of the docstrings use "and" twice. Each docstring focuses on a single job with at most one "and".
-# 
+
 
 # Step 4: Swap In `summarize_by_day()` and Count the Functions You Edited
 def summarize_by_day(valid_records):
