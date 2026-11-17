@@ -60,10 +60,10 @@ By the end of lab you should be able to tell your manager what happens at scale,
 
 ## Your Objectives
 
-- **Step 1: Generate Batches of Your Own Day 15 Class at Three Sizes (10, 1,000, and 100,000)**
-  - *Use your own class from Day 15's lab - your batch should be full of YOUR objects, not a shared template's.*
+- **Step 1: Generate Batches of Your Class at Three Sizes (10, 1,000, and 100,000)**
+  - *Any class works: your own from Day 15's lab, a new one, or the sample LibraryTool on today's slides.*
 
-  *Work in `stress-test-timing-practice_STUDENT.py` under Step 1.*
+  *Work in `stress-test-timing-practice_STUDENT.py` under Step 1: complete its TODOs.*
 
   <details>
   <summary>Stuck? Open this.</summary>
@@ -75,7 +75,7 @@ By the end of lab you should be able to tell your manager what happens at scale,
 - **Step 2: Write Two Searches Over That Batch - a Linear Scan and a Dict Lookup - and Confirm They Agree**
   - *Same two functions Day 16's lecture wrote over SupplyItem - now over your own class and a much bigger batch.*
 
-  *Work in `stress-test-timing-practice_STUDENT.py` under Step 2.*
+  *Work in `stress-test-timing-practice_STUDENT.py` under Step 2: complete its TODOs.*
 
   <details>
   <summary>Stuck? Open this.</summary>
@@ -87,7 +87,7 @@ By the end of lab you should be able to tell your manager what happens at scale,
 - **Step 3: Put a Stopwatch on Both Searches at All Three Sizes and Record the Numbers**
   - *Predict the pattern before running: which column should grow as size grows, and which should stay roughly flat?*
 
-  *Work in `stress-test-timing-practice_STUDENT.py` under Step 3.*
+  *Work in `stress-test-timing-practice_STUDENT.py` under Step 3: complete its TODOs.*
 
   <details>
   <summary>Stuck? Open this.</summary>

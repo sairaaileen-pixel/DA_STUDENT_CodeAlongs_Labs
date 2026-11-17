@@ -14,8 +14,8 @@ grades from these same tables.
 ## Algorithmic Complexity (Big-O) (`algorithmic-complexity-big-o`)
 
 *You prove a Big-O claim with real timing data, not just by reasoning about
-it. Your exact numbers will differ from everyone else's, because you time your
-own class on your own laptop. The shape of the result and your reasoning are
+it. Your exact numbers will differ from everyone else's, because you time a
+class on your own laptop. The shape of the result and your reasoning are
 what get graded, not the specific timing values.*
 
 | Level | Pts | What it looks like |
@@ -33,7 +33,7 @@ batch of your own objects.*
 | Level | Pts | What it looks like |
 |---|---|---|
 | **Exceeds** | 5 | Everything at Meets, plus your batch generation uses varied, non-identical attribute values rather than one repeated instance. |
-| **Meets** | 4 | You write a working `for`-loop linear scan and a dict-comprehension lookup, both over your own Day 15 class. Both return the same result for the same target. Both handle a target that is not present: they return `None` or no match, and neither one crashes. |
+| **Meets** | 4 | You write a working `for`-loop linear scan and a dict-comprehension lookup, both over a class of your choice (your own, or the sample `LibraryTool`). Both return the same result for the same target. Both handle a target that is not present: they return `None` or no match, and neither one crashes. |
 | **Approaching** | 2 | One of your two searches has a real bug, such as a wrong return value or a crash on a missing target. The other one works. |
 | **Below Expectations** | 1 | You write only one search function, or neither one runs without error. |
 
