@@ -13,10 +13,15 @@ with open(DATA_FILE, newline="") as f:
 # Step 1: Write `find_linear()` to Return the Member and Its Comparisons
 def find_linear(members, member_id):
     # TODO: assign `comparisons` to 0
+    comparisons =0
     # TODO: loop over `members`; add 1 to `comparisons` for every row
+    for row in members:
+        comparisons += 1
     # TODO: inside the loop, return row, comparisons on a member_id match
+        if row["member_id"] == member_id:
+            return row, comparisons
     # TODO: after the loop, return None, comparisons
-    pass
+    return None, comparisons 
 
 
 row, count = find_linear(members, "M1150")
@@ -30,6 +35,7 @@ print("comparisons:", count)
 
 # Step 2: Total the Comparisons for All 20 Swipes in `door_checkins.txt`
 # TODO: open CHECKINS_FILE in a with block as `f`
+with open as f
 # TODO: inside it, assign `swipes` to f.read().splitlines()
 # TODO: assign `linear_total` and `not_members` to 0
 # TODO: loop over `swipes`; call find_linear(members, member_id)

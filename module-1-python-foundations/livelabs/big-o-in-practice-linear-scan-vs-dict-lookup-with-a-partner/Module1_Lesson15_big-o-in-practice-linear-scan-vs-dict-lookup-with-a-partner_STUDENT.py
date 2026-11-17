@@ -27,11 +27,24 @@ fill it in before you run the file again.
 print('----- 1. Setup: A Class and Its Objects -----')
 # TODO: define SupplyItem with __init__ storing name, count,
 # department
+class SupplyItem:
+    def __init__(self, name, count, deparment):
+        self.name = name
+        self.count = count
+        self.deparment = deparment   
 
+    def __repr__(self):
+        print(Supply)
 
 # TODO: create a list called supplies with 4 SupplyItem objects
 # of your own choosing
 
+supplies = [
+        SupplyItem("knife", 6, "Kitchen"),
+        SupplyItem("Spoon", 12, "Tool"),
+        SupplyItem("Fork", 12, "Item"),
+         SupplyItem("Pot", 3, "Cooking")
+         ]
 
 # ===== 2. Search 1: Linear Scan =====
 # Write a function that checks each item one at a time until it finds the one
@@ -41,17 +54,27 @@ print('----- 2. Search 1: Linear Scan -----')
 # supplies and returns the item whose .name matches, or None if
 # nothing matches
 
+def find_by_name_linear(supplies, name):
+    for item in supplies:
+        if item.name == name:
+            return item
+    return None
 
 # TODO: call it looking for "Tape", then print the result's name
 # and count
+
+found = find_by_name_linear(supplies, "Tape")
+print(found.name, found.count)
+
 
 # PREDICT before you run: What does find_by_name_linear(supplies, "Nope")
 #                         return? Agree on a guess with your partner, then add
 #                         print(find_by_name_linear(supplies, "Nope")) under
 #                         the Tape search in Search 1: Linear Scan and run it.
 # Your answer:
-#
-#
+# ValueError
+# Output:
+# NonType
 
 
 # ===== 3. Search 2: Dict-Keyed Lookup =====
@@ -60,15 +83,19 @@ print('----- 3. Search 2: Dict-Keyed Lookup -----')
 # TODO: build supplies_by_name as a dict comprehension keyed by
 # each item's .name, valued as the item itself
 
+supplies_by_name = {item.name: item for item in supplies}
 
 # TODO: look up "Tape" with .get(), then print its name and count
+
+found = supplies_by_name.get("Tape")
+print(found.name, found.count)
 
 # PREDICT before you run: What does supplies_by_name.get("Nope") return? Agree
 #                         on a guess with your partner, then add
 #                         print(supplies_by_name.get("Nope")) under the Tape
 #                         lookup in Search 2: Dict-Keyed Lookup and run it.
 # Your answer:
-#
+# Raises an error
 #
 #
 # DISCUSS: What is the Big-O of each search, and why does the dict lookup scale
