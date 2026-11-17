@@ -1,0 +1,37 @@
+[
+  {
+    "tool_id": "dr1",
+    "tool_name": "cordless drill",
+    "tool_quantity": 2,
+    "tool_available": true,
+    "is_power_tool": true
+  },
+  {
+    "tool_id": "pw1",
+    "tool_name": "pressure washer",
+    "tool_quantity": 1,
+    "tool_available": false,
+    "is_power_tool": true
+  },
+  {
+    "tool_id": "ax1",
+    "tool_name": "axe",
+    "tool_quantity": 1,
+    "tool_available": true,
+    "is_power_tool": false
+  },
+  {
+    "tool_id": "hm1",
+    "tool_name": "hammer",
+    "tool_quantity": 1,
+    "tool_available": true,
+    "is_power_tool": false
+  },
+  {
+    "tool_id": "sd1",
+    "tool_name": "screwdriver",
+    "tool_quantity": 1,
+    "tool_available": true,
+    "is_power_tool": false
+  }
+]
