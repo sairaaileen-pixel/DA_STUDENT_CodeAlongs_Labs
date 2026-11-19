@@ -9,6 +9,11 @@ with open(DATA_FILE) as f:
 
 # ===== Day 1 =====
 
+# What does one row represent?
+# Which fields hold numbers, and which hold text?
+# What already looks wrong, missing or inconsistent?
+
+
 # Step 1: Follow the TypeError in `weekly_hours()` Back to Its Cause
 # TODO: run the file as given and read the traceback from the bottom up
 # TODO: add print(repr(hours)) as the first line of add_hours(); run again

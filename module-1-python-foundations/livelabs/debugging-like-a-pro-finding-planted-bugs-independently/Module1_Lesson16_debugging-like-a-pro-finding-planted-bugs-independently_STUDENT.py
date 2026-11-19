@@ -28,15 +28,16 @@ fill it in before you run the file again.
 # Watch-only demo: the code is already here. Run it and read the output.
 print('----- 1. The Script, Part 1: The Class -----')
 class BoardGame:
-    def __init__(self, title,
-               players_available, category):
+    def __init__(self, title, players_available, category):
         self.title = title
         self.players_available = players_available
         self.category = category
 
     def is_available(self):
-        return self.players_available >= 0
-
+        return self.players_available > 0
+        
+# indentation error
+# logic error (>=)
 
 # ===== 2. The Script, Part 2: The Data =====
 # This code builds a list of four BoardGame objects for the script to count.
@@ -48,8 +49,8 @@ games = [
     BoardGame("Chess", 2, "strategy"),
     BoardGame("Sorry!", 4, "Strategy"),
 ]
-
-
+# the last comma on the list.
+# Syntax error
 # ===== 3. The Script, Part 3: Counting Strategy Games =====
 # This loop is meant to count how many games are in the Strategy category, then
 # print a summary.
@@ -64,6 +65,7 @@ print("--- Summary ---")
 print("Category: Strategy")
 print("Count:", strategy_count)
 
+# - 1/ LogicError
 
 # ===== 4. The Script, Part 4: Counting Available Games =====
 # This loop is meant to count how many games have at least one open player
@@ -78,6 +80,8 @@ for game in games:
 print("--- Summary ---")
 print("Category: Available")
 print("Count:", available_count)
+
+# It is printing 4 games available when there are only 3, because we need to change the logic error on step 1 (>= 0)
 
 # DISCUSS: Would you trust the script in sections 1-4 if it ran clean? Pick yes
 #          or no, then answer: what made it look trustworthy, or what would you

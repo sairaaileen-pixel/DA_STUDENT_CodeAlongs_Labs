@@ -205,7 +205,7 @@ sessions_cutoff = 4
 
 def count_reaching_outside(records):
     count = 0
-    for record in records[1:]:
+    for record in records:
         sessions = record.split(",")
         if int(sessions[2]) >= sessions_cutoff:
             count += 1
@@ -259,15 +259,11 @@ def log_signup(record, previous_member):
     current_member = record.split(",")[0]
     print(f"Previous: {previous_member}, current: {current_member}")
     return current_member
-    # TODO: pull the member name out of `record`
-    # TODO: print the previous member and this one on one line
-    # TODO: return this member's name
-    pass
 
 last_member = "nobody yet"
 last_member = log_signup(signups[0], last_member)
 last_member = log_signup(signups[1], last_member)
-# TODO: call log_signup on signups[0], then on signups[1], storing
+# Call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
 
 last_seen = "nobody yet"
@@ -377,13 +373,19 @@ for member in ["Nia", "Omar", "Tess", "Rafi", "Gwen"]:
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
 
-# TODO: an empty list 
-print("Empty list:", total_for([], "Nia"))
-# TODO: a list holding exactly one record
+# An empty list 
+print("Empty sign_ups_for:", signups_for([], "Nia"))
+# A list holding exactly one record
 print("One record:", total_for(signups[1:2], "Nia"))
-# TODO: a member name that is not in the file at all
-# TODO: a name that differs from a real member's only by capitalization
-# TODO: then: do the per-member totals add up to the whole-file total?
+# A member name that is not in the file at all
+print("Missing member (Marco):", total_for(signups, "Marco"))
+# A name that differs from a real member's only by capitalization
+print("Case mismatch (nia):", total_for(signups, "nia"))
+# Then: do the per-member totals add up to the whole-file total?
+members = ["Nia", "Omar", "Tess", "Rafi", "Gwen"]
+five_member_sum = sum(total_for(signups, member) for member in members)
+
+print("Five-member sum:", five_member_sum, "| Every class total:", total_sessions(signups))
 
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -403,5 +405,20 @@ print("One record:", total_for(signups[1:2], "Nia"))
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
+# 1. Edge Case Verdict ("nia" vs. "Nia"):
+#    - The strangest result is passing "nia" when the directory has "Nia", which quietly returns 0.
+#    - That answer is just quiet, not truly safe on real sign-up data, because == is case-sensitive.
+#    - On the center's real data, I would normalize names with .strip().lower() when matching (while keeping display names clean) so capitalization typos do not silently drop sessions.
 #
+# 2. Cross-Check (Five-Member Sum vs. Whole-File Total):
+#    - Adding up the five checked members gave a subtotal to compare against total_sessions(signups), and any gap shows records outside those five names or slicing/filtering mistakes.
+#    - On a 430-row file you cannot eyeball, I would collect all unique member names from the file in code, sum total_for(records, name) across every unique member, and assert or print that it equals total_sessions(records).
+#
+# 3. Three Functions vs. One:
+#    - I split the work into three functions—sessions_in(), signups_for(), and total_for()—instead of putting everything in one function.
+#    - It took a few more lines up front, but it saved time debugging and made each piece reusable and easy to test on its own without re-writing .split(",") logic inside total_for().
+#
+# 4. Open Question / What I Would Do Differently:
+#    - Starting over, I would validate or clean whitespace and casing at load time so a stray space or capital letter does not turn into a silent 0.
+#    - One question worth settling on larger files: when you have hundreds of rows and many members, should you filter per member each time or group sessions into a dictionary once?
 #
