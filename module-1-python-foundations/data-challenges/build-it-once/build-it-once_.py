@@ -387,6 +387,8 @@ five_member_sum = sum(total_for(signups, member) for member in members)
 
 print("Five-member sum:", five_member_sum, "| Every class total:", total_sessions(signups))
 
+
+
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
 #
