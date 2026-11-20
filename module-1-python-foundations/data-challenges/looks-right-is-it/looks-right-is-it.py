@@ -201,5 +201,6 @@ print(f"TOTAL PAYROLL: ${payroll:,.2f}")
 # 2) Overtime-boundary (`>=` vs `>`) bug on `if total >= 40:` inside the `for emp in employee_ids:` loop:
 # Counted 40 hours as overtime instead of requiring strictly more than 40 hours (`total > 40`).
 # Fix: Changed `if total >= 40:` to `if total > 40:` on the line right before `owed_overtime = owed_overtime + 1`.
+
 # Step 4, answer 3:
 # Rosa is the only employee with exactly 40 hours, which is the only case where `>= 40` differs from `> 40` (under 40 is False for both, over 40 is True for both). She only catches the `>= 40` boundary bug because she has no overtime hours to trigger the `hours * rate * 1.5` formula bug.
