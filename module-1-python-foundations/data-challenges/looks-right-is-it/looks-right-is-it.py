@@ -22,12 +22,7 @@ with open(DATA_FILE) as f:
 
 
 # Step 1: Follow the TypeError in `weekly_hours()` Back to Its Cause
-# TODO: run the file as given and read the traceback from the bottom up
-# TODO: add print(repr(hours)) as the first line of add_hours(); run again
-# TODO: find that printed value in the CSV
-# TODO: fix the line that reads the wrong column to read the hours column
-# TODO: wrap that value in int() so add_hours() adds a number
-# TODO: delete the print(repr(hours)) line once Rosa's total is right
+
 def add_hours(total, hours):
     # print(repr(hours))  # temporary debug print
     return total + hours
@@ -68,11 +63,6 @@ assert weekly_hours(lines, "E101") == 40, "Step 1 failed: expected 40 hours for 
 
 
 # Step 2: Trace the ZeroDivisionError Back to the Hand-Typed Staff List
-# TODO: run the file as given; note the last ID that printed
-# TODO: compare every ID in `staff` with the IDs in the CSV
-# TODO: replace the hand-typed `staff` list with an empty list
-# TODO: loop over lines[1:]; append each row's employee ID to `staff` once
-# TODO: print "employees in the file:" and len(staff)
 
 def days_worked(lines, emp_id):
     days = 0
@@ -117,10 +107,7 @@ for emp_id in staff:
 # ===== Day 2 =====
 
 # Step 3: Find Why Four of the Five Weekly Hour Totals Are Wrong
-# TODO: add up Rosa's (E101) and Mei's (E103) hours by hand first
-# TODO: print("starting", emp, "total is", total) first in the outer loop
-# TODO: move the line that sets `total` inside the outer loop
-# TODO: delete the "starting" print once all five totals are right
+
 records = []
 for row in lines[1:]:
     emp_id, name, day, hours, rate = row.split(",")
@@ -156,9 +143,7 @@ assert weekly_hours(lines, "E103") == 32, "Expected Mei (E103) weekly hours to b
 
 
 # Step 4: Fix Two Overtime Bugs That Overpay the Firm by $1,810 a Week
-# TODO: work out Rosa's, Darnell's and Mei's pay by hand first
-# TODO: fix weekly_pay() so it follows the handbook rule word for word
-# TODO: fix the other line that compares `total` against 40 the same way
+
 def weekly_pay(hours, rate):
     if hours > 40:
         return (40 * rate) + ((hours - 40) * rate * 1.5)
